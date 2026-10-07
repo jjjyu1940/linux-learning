@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- SPDX-License-Identifier: MIT -->
 
 # Linux / Unix 常用命令速记

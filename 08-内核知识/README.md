@@ -11,10 +11,9 @@
 
 查看内核版本：
 
-bash
-
+```bash
 uname -r
-
+```
 
 ---
 
@@ -25,19 +24,16 @@ uname -r
 
 查看已加载的模块：
 
-bash
-
+```bash
 lsmod
-
+```
 
 加载/卸载模块：
 
-bash
-
+```bash
 sudo modprobe <模块名>      # 加载
-
 sudo modprobe -r <模块名>   # 卸载
-
+```
 
 ---
 
@@ -48,16 +44,12 @@ sudo modprobe -r <模块名>   # 卸载
 
 常用命令：
 
-bash
-
+```bash
 ps aux                # 查看所有进程
-
 top                   # 实时监控进程
-
 kill <PID>            # 终止进程
-
 nice -n <优先级> <命令>  # 以指定优先级运行
-
+```
 
 进程状态：运行(R)、睡眠(S)、不可中断(D)、僵尸(Z)、停止(T)。
 
@@ -71,19 +63,16 @@ nice -n <优先级> <命令>  # 以指定优先级运行
 
 查看内存使用：
 
-bash
-
+```bash
 free -h
-
 cat /proc/meminfo
-
+```
 
 交换分区（Swap）：
 
-bash
-
+```bash
 swapon --show          # 查看 swap 使用
-
+```
 
 ---
 
@@ -94,14 +83,11 @@ swapon --show          # 查看 swap 使用
 
 常用操作：
 
-bash
-
+```bash
 df -hT                 # 查看磁盘挂载及文件系统类型
-
 mount /dev/sda1 /mnt   # 挂载
-
 umount /mnt            # 卸载
-
+```
 
 ---
 
@@ -112,14 +98,11 @@ umount /mnt            # 卸载
 
 查看设备：
 
-bash
-
+```bash
 lsblk                  # 块设备
-
 lspci                  # PCI 设备
-
 lsusb                  # USB 设备
-
+```
 
 ---
 
@@ -130,10 +113,9 @@ lsusb                  # USB 设备
 
 查看系统调用列表：
 
-bash
-
+```bash
 strace <命令>          # 跟踪程序执行的系统调用
-
+```
 
 ---
 
@@ -141,39 +123,31 @@ strace <命令>          # 跟踪程序执行的系统调用
 
 获取内核源码：
 
-bash
-
+```bash
 wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.tar.xz
-
 tar -xf linux-6.1.tar.xz
-
 cd linux-6.1
-
+```
 
 配置：
 
-bash
-
+```bash
 make menuconfig        # 图形化配置
-
+```
 
 编译并安装：
 
-bash
-
+```bash
 make -j$(nproc)        # 编译
-
 sudo make modules_install
-
 sudo make install
-
+```
 
 更新引导：
 
-bash
-
+```bash
 sudo update-grub       # Debian/Ubuntu
-
+```
 
 ---
 
@@ -181,12 +155,10 @@ sudo update-grub       # Debian/Ubuntu
 
 查看内核日志：
 
-bash
-
+```bash
 dmesg                  # 显示内核环缓冲区消息
-
 journalctl -k          # systemd 系统查看内核日志
-
+```
 
 调试工具：
 - `kgdb`：内核调试器
